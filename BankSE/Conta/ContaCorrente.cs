@@ -22,7 +22,7 @@ namespace BankSE.Conta
 
         public string Conta { get; set; }
 
-        private double saldo;        //o campo saldo não pode ser público
+        private double saldo = 100;        //o campo saldo não pode ser público
 
         public Cliente Titular { get; set; }
 
@@ -43,8 +43,7 @@ namespace BankSE.Conta
             }
             else
             {
-                Console.WriteLine("Saldo insuficiente.");
-                return false;
+                throw new SaldoInsuficienteException("Saldo insuficiente para a operação!");
             }
 
         }
