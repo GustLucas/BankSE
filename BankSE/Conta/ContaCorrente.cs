@@ -35,6 +35,7 @@ namespace BankSE.Conta
 
         public bool Sacar(double valor)
         {
+
             if (valor <= saldo)
             {
                 saldo -= valor;
